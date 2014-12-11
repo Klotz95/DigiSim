@@ -1,0 +1,7 @@
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\bin\Debug\DigiSim.exe
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\bin\Debug\DigiSim.pdb
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.Form1.resources
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.Properties.Resources.resources
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.csproj.GenerateResource.Cache
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.exe
+Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.pdb
