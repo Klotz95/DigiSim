@@ -27,6 +27,7 @@ namespace DigiSim
         {
             this.xPosition = xPosition;
             this.yPosition = yPosition;
+            
         }
         //Methode für die Änderung der Eingänge
         public void ChangeInput(int Anzahl)
