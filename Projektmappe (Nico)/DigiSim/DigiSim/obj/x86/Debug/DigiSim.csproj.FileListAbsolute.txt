@@ -7,3 +7,9 @@ Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.ex
 Z:\Documents\Schule\Software LK\DigiSim\DigiSim\DigiSim\obj\x86\Debug\DigiSim.pdb
 Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.exe
 Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.pdb
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.Form1.resources
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.Properties.Resources.resources
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.csproj.GenerateResource.Cache
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\bin\Debug\DigiSim.exe
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\bin\Debug\DigiSim.pdb
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.csprojResolveAssemblyReference.cache

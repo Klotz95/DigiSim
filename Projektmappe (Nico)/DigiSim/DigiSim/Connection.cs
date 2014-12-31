@@ -17,18 +17,19 @@ namespace DigiSim
         Inputpin = input;
         Outputpin = output;
       }
-      public void statedelivery
+      public void statedelivery()
       {
-        //check for state of Outputpin and deliver to Inputpin
-        if(Outputpin.getState())
-        {
-          //set Input to true
-          Inputpin.setState(true);
-        }
-        else
-        {
-          Inputpin.setState(false);
-        }
+          //set the state of the inputpin
+          if (Outputpin.getState())
+          {
+              //Input = 1
+              Inputpin.setState(true);
+          }
+          else
+          {
+              //Input = 0
+              Inputpin.setState(false);
+          }
       }
 
 

@@ -8,13 +8,13 @@ namespace DigiSim
     class GateObject
     {
         //Attribute
-        double xPosition;
-        double yPosition;
-        double lenght;
-        double width;
-        int inputs;
-        int outputs;
-        System.Collections.ArrayList allPins = new System.Collections.ArrayList();
+        public double xPosition;
+        public double yPosition;
+        public double height;
+        public double width;
+        public int inputs;
+        public int outputs;
+        public Pin[] allPins;
 
         //Konstruktor für die Initialiserung und Zeichnung des Obejktes
         public GateObject(double xPosition, double yPosition)
@@ -35,9 +35,13 @@ namespace DigiSim
             inputs = Anzahl;
         }
         //Zurückgeben der eignen Pins
-        public System.Collections.ArrayList getPins()
+        public Pin[] getPins()
         {
             return allPins;
+        }
+        public void setPins(Pin[] Übergabe)
+        {
+            allPins = Übergabe;
         }
     }
 }

@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.speichernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ladenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rückgängiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wiederholenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funktionsumfangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -45,6 +45,7 @@
             this.schalterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.löschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bewegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1902, 43);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // dateiToolStripMenuItem
             // 
@@ -70,24 +72,6 @@
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(85, 39);
             this.dateiToolStripMenuItem.Text = "Datei";
-            // 
-            // bearbeitenToolStripMenuItem
-            // 
-            this.bearbeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rückgängiToolStripMenuItem,
-            this.wiederholenToolStripMenuItem});
-            this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
-            this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(145, 39);
-            this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
-            // 
-            // hilfeToolStripMenuItem
-            // 
-            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.überToolStripMenuItem,
-            this.funktionsumfangToolStripMenuItem});
-            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
-            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(78, 39);
-            this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // speichernToolStripMenuItem
             // 
@@ -107,6 +91,15 @@
             this.beendenToolStripMenuItem.Size = new System.Drawing.Size(199, 40);
             this.beendenToolStripMenuItem.Text = "Beenden";
             // 
+            // bearbeitenToolStripMenuItem
+            // 
+            this.bearbeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rückgängiToolStripMenuItem,
+            this.wiederholenToolStripMenuItem});
+            this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
+            this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(145, 39);
+            this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
+            // 
             // rückgängiToolStripMenuItem
             // 
             this.rückgängiToolStripMenuItem.Name = "rückgängiToolStripMenuItem";
@@ -118,6 +111,15 @@
             this.wiederholenToolStripMenuItem.Name = "wiederholenToolStripMenuItem";
             this.wiederholenToolStripMenuItem.Size = new System.Drawing.Size(231, 40);
             this.wiederholenToolStripMenuItem.Text = "Wiederholen";
+            // 
+            // hilfeToolStripMenuItem
+            // 
+            this.hilfeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.überToolStripMenuItem,
+            this.funktionsumfangToolStripMenuItem});
+            this.hilfeToolStripMenuItem.Name = "hilfeToolStripMenuItem";
+            this.hilfeToolStripMenuItem.Size = new System.Drawing.Size(78, 39);
+            this.hilfeToolStripMenuItem.Text = "Hilfe";
             // 
             // überToolStripMenuItem
             // 
@@ -165,11 +167,22 @@
             this.bewegenToolStripMenuItem.Size = new System.Drawing.Size(190, 40);
             this.bewegenToolStripMenuItem.Text = "Bewegen";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(191, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1902, 752);
+            this.ClientSize = new System.Drawing.Size(1902, 667);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -200,6 +213,7 @@
         private System.Windows.Forms.ToolStripMenuItem schalterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem löschenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bewegenToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
 

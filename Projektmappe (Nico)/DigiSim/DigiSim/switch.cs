@@ -17,9 +17,25 @@ namespace DigiSim
           inputs = 0;
           //Create the output Pin
           Pin first = new Pin(false);
+          allPins = new Pin[1];
+          allPins[0] = first;
           //turn the switch off
           state = false;
 
         }
+        public void ChangeState()
+        {
+            state = !state;
+        }
+        public void refresh()
+        {
+          //set the outputpin to the state of the button
+            allPins[0].setState(state);
+        }
+        public void draw()
+        {
+
+        }
+
     }
 }
