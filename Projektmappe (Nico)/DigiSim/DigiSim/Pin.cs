@@ -43,13 +43,13 @@ namespace DigiSim
         {
           occupied = state;
         }
-        public double[] getPosition()
+        public int[] getPosition()
         {
-            double[] Rückgabe = new double[4];
-            Rückgabe[0] = xPosition;
-            Rückgabe[1] = yPosition;
-            Rückgabe[2] = height;
-            Rückgabe[3] = width;
+            int[] Rückgabe = new int[4];
+            Rückgabe[0] = Convert.ToInt32(xPosition);
+            Rückgabe[1] = Convert.ToInt32(yPosition);
+            Rückgabe[2] = Convert.ToInt32(width);
+            Rückgabe[3] = Convert.ToInt32(height);
             return Rückgabe;
         }
         public  void  draw(double xPosition,double yPosition,ref Graphics g)
@@ -62,7 +62,14 @@ namespace DigiSim
             Size s = new Size();
             s.Height = Convert.ToInt32(height);
             s.Width = Convert.ToInt32(width);
-            g.FillEllipse(Brushes.Black, new Rectangle(p, s));
+            if (occupied)
+            {
+                g.FillEllipse(Brushes.Blue, new Rectangle(p, s));
+            }
+            else
+            {
+                g.FillEllipse(Brushes.Black, new Rectangle(p, s));
+            }
         }
 
     }

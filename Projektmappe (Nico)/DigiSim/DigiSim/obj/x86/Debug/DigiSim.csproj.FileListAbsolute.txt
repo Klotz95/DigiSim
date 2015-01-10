@@ -13,3 +13,4 @@ Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.csproj.Gene
 Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\bin\Debug\DigiSim.exe
 Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\bin\Debug\DigiSim.pdb
 Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.csprojResolveAssemblyReference.cache
+Z:\DigiSim\Projektmappe (Nico)\DigiSim\DigiSim\obj\x86\Debug\DigiSim.ChangeInput.resources

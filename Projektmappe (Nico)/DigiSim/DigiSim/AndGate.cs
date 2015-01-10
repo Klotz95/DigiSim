@@ -27,11 +27,13 @@ namespace DigiSim
       allPins[1] = firstIn;
       allPins[2] = secondIn;
     }
-    public void refresh()
+    public bool refresh()
     {
       //look for a changing in the counting of inputs
+        bool drawing = false;
         if (allPins.Length != outputs + inputs)
         {
+            drawing = true;
             //save the current array
             Pin[] saved = allPins;
             //look wheter there are less or more Pins
@@ -72,6 +74,7 @@ namespace DigiSim
           }
         }
         allPins[0].setState(outen);
+        return drawing;
 
     }
     public void draw(ref Graphics g)
@@ -85,6 +88,10 @@ namespace DigiSim
         if (allPins.Length > 6)
         {
             height = 100 + ((allPins.Length - 6) * 20);
+        }
+        else
+        {
+            height = 100;
         }
         s.Width = Convert.ToInt32(width);
         s.Height = Convert.ToInt32(height);
@@ -110,7 +117,7 @@ namespace DigiSim
 
 
 
-        
+
     }
   }
 }

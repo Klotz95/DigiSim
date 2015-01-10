@@ -23,17 +23,15 @@ namespace DigiSim
             allPins = new Pin[1];
             allPins[0] = firstInput;
         }
-        public void refresh()
+        public bool refresh()
         {
             //look if input = 1 or input = 0 and turn off/turn on the light
-            if (allPins[0].getState())
+            if(allPins[0].getState() != light)
             {
-                light = true;
+              light = allPins[0].getState();
+              return true;
             }
-            else
-            {
-                light = false;
-            }
+            return false;
         }
         public void draw(ref Graphics g)
         {
@@ -81,7 +79,7 @@ namespace DigiSim
                 Ende.X = Convert.ToInt32(xPosition + width - (width/6) );
                 Ende.Y = Convert.ToInt32(yPosition +(height/6));
                 g.DrawLine(Pens.Black, Start, Ende);
-                
+
             }
             //now draw the input-Pin
             int xPinKordinate = Convert.ToInt32(xPosition - 10);
