@@ -48,6 +48,11 @@ namespace DigiSim
               g.DrawLine(Pens.Black, new Point(p1.X + x, p1.Y - y), p2);
           }
       }
+      public void deleteSelection()
+      {
+          Inputpin.setSelected(false);
+          Outputpin.setSelected(false);
+      }
       public bool statedelivery()
       {
           //set the state of the inputpin

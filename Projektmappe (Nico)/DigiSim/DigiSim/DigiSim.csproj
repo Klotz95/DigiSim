@@ -69,6 +69,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="switch.cs" />
+    <Compile Include="UndoStorage.cs" />
     <Compile Include="VCC.cs" />
     <EmbeddedResource Include="ChangeInput.resx">
       <DependentUpon>ChangeInput.cs</DependentUpon>

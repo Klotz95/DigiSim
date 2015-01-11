@@ -103,12 +103,14 @@ namespace DigiSim
                           {
                             //set the pin as occupied
                             allPins[i].setOccupied(true);
+                            allPins[i].setSelected(true);
                             toEstablishConnection.setInputPin(ref allPins[i]);
                             return true;
                           }
                           if(allPins[i].getSetting() == false && toEstablishConnection.haveOutput() == false)
                           {
                             //set the pin as occupied and set him as outputpin for connection
+                            allPins[i].setSelected(true);
                             allPins[i].setOccupied(true);
                             toEstablishConnection.setOutputPin(ref allPins[i]);
                             return true;

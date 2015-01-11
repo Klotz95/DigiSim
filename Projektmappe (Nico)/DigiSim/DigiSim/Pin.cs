@@ -9,6 +9,7 @@ namespace DigiSim
     class Pin
     {
         //Attribute
+        bool selected;
         bool setting;
         bool state;
         bool occupied;
@@ -22,6 +23,15 @@ namespace DigiSim
         {
           this.setting = setting;
           occupied = false;
+          selected = false;
+        }
+        public bool getSelected()
+        {
+            return selected;
+        }
+        public void setSelected(bool state)
+        {
+            selected = state;
         }
         public bool getSetting()
         {
@@ -62,7 +72,7 @@ namespace DigiSim
             Size s = new Size();
             s.Height = Convert.ToInt32(height);
             s.Width = Convert.ToInt32(width);
-            if (occupied)
+            if (selected)
             {
                 g.FillEllipse(Brushes.Blue, new Rectangle(p, s));
             }
