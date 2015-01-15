@@ -36,7 +36,6 @@
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bearbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rückgängiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.wiederholenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hilfeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.überToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funktionsumfangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,12 +83,14 @@
             this.speichernToolStripMenuItem.Name = "speichernToolStripMenuItem";
             this.speichernToolStripMenuItem.Size = new System.Drawing.Size(199, 40);
             this.speichernToolStripMenuItem.Text = "Speichern";
+            this.speichernToolStripMenuItem.Click += new System.EventHandler(this.speichernToolStripMenuItem_Click);
             // 
             // ladenToolStripMenuItem
             // 
             this.ladenToolStripMenuItem.Name = "ladenToolStripMenuItem";
             this.ladenToolStripMenuItem.Size = new System.Drawing.Size(199, 40);
             this.ladenToolStripMenuItem.Text = "Laden";
+            this.ladenToolStripMenuItem.Click += new System.EventHandler(this.ladenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
@@ -100,8 +101,7 @@
             // bearbeitenToolStripMenuItem
             // 
             this.bearbeitenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rückgängiToolStripMenuItem,
-            this.wiederholenToolStripMenuItem});
+            this.rückgängiToolStripMenuItem});
             this.bearbeitenToolStripMenuItem.Name = "bearbeitenToolStripMenuItem";
             this.bearbeitenToolStripMenuItem.Size = new System.Drawing.Size(145, 39);
             this.bearbeitenToolStripMenuItem.Text = "Bearbeiten";
@@ -109,14 +109,10 @@
             // rückgängiToolStripMenuItem
             // 
             this.rückgängiToolStripMenuItem.Name = "rückgängiToolStripMenuItem";
-            this.rückgängiToolStripMenuItem.Size = new System.Drawing.Size(231, 40);
+            this.rückgängiToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.rückgängiToolStripMenuItem.Size = new System.Drawing.Size(312, 40);
             this.rückgängiToolStripMenuItem.Text = "Rückgängig";
-            // 
-            // wiederholenToolStripMenuItem
-            // 
-            this.wiederholenToolStripMenuItem.Name = "wiederholenToolStripMenuItem";
-            this.wiederholenToolStripMenuItem.Size = new System.Drawing.Size(231, 40);
-            this.wiederholenToolStripMenuItem.Text = "Wiederholen";
+            this.rückgängiToolStripMenuItem.Click += new System.EventHandler(this.rückgängiToolStripMenuItem_Click);
             // 
             // hilfeToolStripMenuItem
             // 
@@ -149,7 +145,7 @@
             this.löschenToolStripMenuItem,
             this.bewegenToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(318, 226);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(318, 204);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // gatterToolStripMenuItem
@@ -272,7 +268,6 @@
         private System.Windows.Forms.ToolStripMenuItem beendenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bearbeitenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rückgängiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem wiederholenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hilfeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem überToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funktionsumfangToolStripMenuItem;

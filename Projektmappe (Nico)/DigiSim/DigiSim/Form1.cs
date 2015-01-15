@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
+using System.Collections;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace DigiSim
 {
@@ -21,11 +25,13 @@ namespace DigiSim
         AndGate[] Ands = new AndGate[0];
         Connection[] Connections = new Connection[0];
         VCC[] VCCS = new VCC[0];
+        UndoStorage[] Undos = new UndoStorage[0];
         Connection toEstablishConnection = new Connection();
         Point currentMousePosition;
         ChangeInput currentChangeInput;
         bool onMove = false;
         bool needraw = false;
+        bool undo = false;
         public Form1()
         {
             InitializeComponent();
@@ -233,6 +239,21 @@ namespace DigiSim
                 }
 
             }
+            //now save the current state for undo
+            if(undo != true)
+            {
+               //save the current undo-Storage
+                UndoStorage[] saved = Undos;
+                Undos = new UndoStorage[saved.Length + 1];
+                //transfer the old array to the new one
+                for (int i = 0; i < saved.Length; i++)
+                {
+                    Undos[i] = saved[i];
+                }
+                //now save the new state
+                Undos[Undos.Length - 1] = new UndoStorage(Ands, Connections, GNDS, VCCS, LEDS, Nots, Ors, switches);
+            }
+            undo = false;
 
 
         }
@@ -245,6 +266,9 @@ namespace DigiSim
             this.Click += new EventHandler(Form1_Click);
             //event Handler for resizing
             this.Resize += new EventHandler(Form1_ResizeEnd);
+            //save the first state
+            Undos = new UndoStorage[1];
+            Undos[0] = new UndoStorage(Ands, Connections, GNDS, VCCS, LEDS, Nots, Ors, switches);
 
 
         }
@@ -994,7 +1018,7 @@ namespace DigiSim
                     {
 
                     }
-   
+
                     //now search the gate again and set the point
                     Point next = currentMousePosition;
                     found = false;
@@ -1115,5 +1139,85 @@ namespace DigiSim
 
 
             }
+
+        private void rückgängiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //save the old undo-storage
+            UndoStorage[] saved = Undos;
+            if (Undos.Length> 1)
+            {
+                Undos[Undos.Length - 2].getCurrentState(ref Ands, ref Connections, ref GNDS, ref VCCS, ref LEDS, ref Nots, ref Ors, ref switches);
+                //now crate the new Undostorage
+                Undos = new UndoStorage[Undos.Length - 1];
+                for (int i = 0; i < Undos.Length; i++)
+                {
+                    Undos[i] = saved[i];
+                }
+                undo = true;
+                needraw = true;
+                refresh();
+            }
+        }
+
+        private void speichernToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.ShowDialog();
+            string Pfad = sv.FileName;
+            if (!Pfad.Contains(".dat"))
+            {
+                Pfad += ".dat";
+            }
+            //create a hashtable
+            Hashtable saving = new Hashtable();
+            saving.Add("VCC", VCCS);
+            saving.Add("GND", GNDS);
+            saving.Add("Connection", Connections);
+            saving.Add("LED", LEDS);
+            saving.Add("Ors", Ors);
+            saving.Add("Ands", Ands);
+            saving.Add("Not", Nots);
+            saving.Add("Switch", switches);
+
+            //create a Filestream
+            FileStream fs = new FileStream(Pfad, FileMode.Create);
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(fs, saving);
+            fs.Close();
+            this.Text ="DigiSim " + Pfad;
+        }
+
+        private void ladenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //create a empty hashtable
+            Hashtable saved = null;
+            OpenFileDialog os = new OpenFileDialog();
+            os.ShowDialog();
+            string Pfad = os.FileName;
+            try
+            {
+                FileStream Fs = new FileStream(Pfad, FileMode.Open);
+                BinaryFormatter bf = new BinaryFormatter();
+                saved = (Hashtable)bf.Deserialize(Fs);
+                VCCS = (VCC[])saved["VCC"];
+                GNDS = (GND[])saved["GND"];
+                Connections = (Connection[])saved["Connection"];
+                LEDS = (LED[])saved["LED"];
+                Ors = (OrGate[])saved["Ors"];
+                Ands = (AndGate[])saved["Ands"];
+                Nots = (Not[])saved["Not"];
+                switches = (Cswitch[])saved["Switch"];
+                //check for null and initialize them
+               
+                this.Text = "DigiSim " + Pfad;
+                needraw = true;
+                refresh();
+            }
+            catch
+            {
+                MessageBox.Show("Die Datei konnte nicht geladen werden.", "Fehler");
+            }
+
+        }
         }
     }

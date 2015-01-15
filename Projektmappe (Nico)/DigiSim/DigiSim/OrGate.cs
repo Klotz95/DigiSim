@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
     class OrGate:GateObject
     {
       public OrGate(double xPosition,double yPosition):base(xPosition,yPosition)

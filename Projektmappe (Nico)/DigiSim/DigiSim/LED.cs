@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
     class LED : GateObject
     {
         //attributs

@@ -6,8 +6,10 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
   class AndGate:GateObject
   {
+  
     //Konstruktor
     public AndGate(double xPosition,double yPosition):base(xPosition,yPosition)
     {

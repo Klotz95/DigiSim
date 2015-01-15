@@ -6,11 +6,14 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
     class GND:GateObject
     {
       //Konstruktor
+    
       public GND(double xPosition, double yPosition):base(xPosition,yPosition)
       {
+       
         //Set pin and create one
         inputs = 0;
         outputs = 1;

@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
     class GateObject
     {
         //Attribute
@@ -16,7 +17,9 @@ namespace DigiSim
         protected int inputs;
         protected int outputs;
         protected Pin[] allPins;
-
+        public GateObject()
+        {
+        }
         //Konstruktor für die Initialiserung und Zeichnung des Obejktes
         public GateObject(double xPosition, double yPosition)
         {

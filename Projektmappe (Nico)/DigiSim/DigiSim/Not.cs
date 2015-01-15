@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
   class Not:GateObject
   {
     public Not(double xPosition, double yPosition):base(xPosition,yPosition)

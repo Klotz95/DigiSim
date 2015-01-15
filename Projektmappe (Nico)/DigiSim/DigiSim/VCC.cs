@@ -6,9 +6,10 @@ using System.Drawing;
 
 namespace DigiSim
 {
+    [Serializable]
   class VCC:GateObject
   {
-    //Konstruktor
+      
     public VCC(double xPosition,double yPosition):base(xPosition,yPosition)
     {
       //Set the types
